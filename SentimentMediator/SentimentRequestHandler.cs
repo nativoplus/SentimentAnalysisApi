@@ -1,17 +1,18 @@
-﻿using System.Threading;
+﻿using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using SentimentMediator.ViewModels;
+using SentimentServices.Interfaces;
 using SentimentServices.Models;
-using SentimentServices.Services;
 
 namespace SentimentMediator
 {
     public class SentimentRequestHandler : IRequestHandler<SentimentRequest, SentimentResponse>
     {
-        private readonly SentimentService<SourceData, Prediction> _sentimentService;
+        private readonly ISentimentService<SourceData, Prediction> _sentimentService;
 
-        public SentimentRequestHandler(SentimentService<SourceData, Prediction> sentimentService)
+        public SentimentRequestHandler(ISentimentService<SourceData, Prediction> sentimentService)
         {
             _sentimentService = sentimentService;
         }
@@ -21,8 +22,13 @@ namespace SentimentMediator
             return await Task.Run(() =>
                 new SentimentResponse
                 {
-                    Message = request.Message,
-                    Score = _sentimentService.Predict(new SourceData { SentimentText = request.Message }).Percentage
+                    Status = "OK",
+                    Code = (int)HttpStatusCode.OK,
+                    Result = new SentimentResult
+                    {
+                        SentimentText = request.Message,
+                        Score = _sentimentService.Predict(new SourceData { SentimentText = request.Message }).Percentage
+                    }
                 }
             );
         }

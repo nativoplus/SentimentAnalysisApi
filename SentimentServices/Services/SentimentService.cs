@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using Microsoft.ML;
 using Microsoft.Extensions.ObjectPool;
-using Microsoft.AspNetCore.Hosting;
+using SentimentServices.Interfaces;
 
 namespace SentimentServices.Services
 {
-    public class SentimentService<TData, TPrediction>
+    public class SentimentService<TData, TPrediction> : ISentimentService<TData, TPrediction>
         where TData : class
         where TPrediction : class, new()
     {
@@ -13,16 +13,11 @@ namespace SentimentServices.Services
         private readonly ITransformer _mlModel;
         private readonly ObjectPool<PredictionEngine<TData, TPrediction>> _predictionEnginePool;
 
-        private static string _sentimentModelFilePath = "TrainedModel\\SentimentModel.zip";
-
-        public SentimentService(IHostingEnvironment hostingEnvironment)
+        public SentimentService(string mlModelFullPath)
         {
             _mlContext = new MLContext();
 
-            string contentRootPath = hostingEnvironment.ContentRootPath;
-            string modelFullPath = Path.Combine(contentRootPath, _sentimentModelFilePath);
-
-            using (var fs = File.OpenRead(modelFullPath))
+            using (var fs = File.OpenRead(mlModelFullPath))
             {
                 _mlModel = _mlContext.Model.Load(fs);
             }
