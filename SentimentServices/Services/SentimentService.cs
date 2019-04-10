@@ -1,7 +1,8 @@
 ﻿using System.IO;
 using Microsoft.ML;
 using Microsoft.Extensions.ObjectPool;
-using SentimentServices.Interfaces;
+using SentimentInterfaces.SentimentService;
+using System.Threading.Tasks;
 
 namespace SentimentServices.Services
 {
@@ -32,7 +33,7 @@ namespace SentimentServices.Services
             return new DefaultObjectPool<PredictionEngine<TData, TPrediction>>(predEnginePolicy);
         }
 
-        public TPrediction Predict(TData dataSample)
+        public async Task<TPrediction> PredictAsync(TData dataSample)
         {
             PredictionEngine<TData, TPrediction> predictionEngine = _predictionEnginePool.Get();
 

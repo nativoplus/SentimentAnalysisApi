@@ -10,7 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SentimentServices\SentimentServices.csproj" />
+    <ProjectReference Include="..\SentimentInterfaces\SentimentInterfaces.csproj" />
+    <ProjectReference Include="..\SentimentViewModels\SentimentViewModels.csproj" />
   </ItemGroup>
 
 </Project>

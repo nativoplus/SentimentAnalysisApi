@@ -1,4 +1,4 @@
-﻿namespace SentimentMediator.ViewModels
+﻿namespace SentimentViewModels.SentimentMediator
 {
     public class SentimentResult
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using SentimentMediator.ViewModels;
+using SentimentViewModels.SentimentMediator;
 using System.Net;
 
 namespace SentimentInfrastructure.Extensions

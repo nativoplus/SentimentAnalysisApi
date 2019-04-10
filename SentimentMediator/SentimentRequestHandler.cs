@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SentimentMediator.ViewModels;
-using SentimentServices.Interfaces;
-using SentimentServices.Models;
+using SentimentInterfaces.SentimentService;
+using SentimentViewModels.SentimentMediator;
+using SentimentViewModels.SentimentService;
 
 namespace SentimentMediator
 {
@@ -19,18 +19,18 @@ namespace SentimentMediator
 
         public async Task<SentimentResponse> Handle(SentimentRequest request, CancellationToken cancellationToken)
         {
-            return await Task.Run(() =>
-                new SentimentResponse
+            var prediction = await _sentimentService.PredictAsync(new SourceData { SentimentText = request?.Message ?? string.Empty });
+
+            return new SentimentResponse
+            {
+                Status = "OK",
+                Code = (int)HttpStatusCode.OK,
+                Result = new SentimentResult
                 {
-                    Status = "OK",
-                    Code = (int)HttpStatusCode.OK,
-                    Result = new SentimentResult
-                    {
-                        SentimentText = request.Message,
-                        Score = _sentimentService.Predict(new SourceData { SentimentText = request.Message }).Percentage
-                    }
+                    SentimentText = request.Message,
+                    Score = prediction?.Percentage ?? 0
                 }
-            );
+            };
         }
     }
 }

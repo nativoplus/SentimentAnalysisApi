@@ -1,4 +1,4 @@
-﻿namespace SentimentServices.Models
+﻿namespace SentimentViewModels.SentimentService
 {
     // Destination model for prediction engine
     public class Prediction

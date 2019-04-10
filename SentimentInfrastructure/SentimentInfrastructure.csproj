@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SentimentMediator\SentimentMediator.csproj" />
+    <ProjectReference Include="..\SentimentViewModels\SentimentViewModels.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SentimentMediator.ViewModels
+namespace SentimentViewModels.SentimentMediator
 {
     public class SentimentResponse
     {

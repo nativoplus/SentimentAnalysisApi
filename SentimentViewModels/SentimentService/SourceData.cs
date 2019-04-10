@@ -1,4 +1,4 @@
-﻿namespace SentimentServices.Models
+﻿namespace SentimentViewModels.SentimentService
 {
     // Source model for prediction engine
     public class SourceData

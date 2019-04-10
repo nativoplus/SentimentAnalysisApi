@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SentimentInfrastructure.Extensions;
+using SentimentInterfaces.SentimentService;
 using SentimentMediator;
-using SentimentServices.Interfaces;
-using SentimentServices.Models;
 using SentimentServices.Services;
+using SentimentViewModels.SentimentService;
 using System.IO;
 
 namespace SentimentAnalysisApi
