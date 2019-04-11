@@ -37,6 +37,18 @@ namespace SentimentAnalysisApi
                 string mlModelFullPath = Path.Combine(HostingEnvironment.ContentRootPath, Configuration["MlModel:Path"]);
                 return new SentimentService<SourceData, Prediction>(mlModelFullPath);
             });
+
+            /*
+             * For testing purposes only.
+             */
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("CorsPolicy",
+            //        builder => builder.AllowAnyOrigin()
+            //        .AllowAnyMethod()
+            //        .AllowAnyHeader()
+            //        .AllowCredentials());
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +65,12 @@ namespace SentimentAnalysisApi
             }
 
             app.ConfigureExceptionHandler();
+
+            /*
+             * For testing purposes only.
+             */
+            //app.UseCors("CorsPolicy");
+
 
             app.UseHttpsRedirection();
             app.UseMvc();
