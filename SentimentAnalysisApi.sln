@@ -5,9 +5,15 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysisApi", "SentimentAnalysisApi\SentimentAnalysisApi.csproj", "{B6C61FD8-309D-4050-956F-8FB220569BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentMediator", "SentimentMediator\SentimentMediator.csproj", "{3BF905E9-1742-4BCC-8317-8B087AE1A730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentMediator", "SentimentMediator\SentimentMediator.csproj", "{3BF905E9-1742-4BCC-8317-8B087AE1A730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentServices", "SentimentServices\SentimentServices.csproj", "{6DA92412-D286-4A90-A5C9-27D22D2A882A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentServices", "SentimentServices\SentimentServices.csproj", "{6DA92412-D286-4A90-A5C9-27D22D2A882A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentInfrastructure", "SentimentInfrastructure\SentimentInfrastructure.csproj", "{C278C8E2-A36B-405A-9F95-93324B30F832}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentInterfaces", "SentimentInterfaces\SentimentInterfaces.csproj", "{18DDBF75-1DBF-4A4C-B2ED-5D77ED42AAA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentViewModels", "SentimentViewModels\SentimentViewModels.csproj", "{656E0D59-E979-48AA-913F-66F8D1F73388}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{6DA92412-D286-4A90-A5C9-27D22D2A882A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DA92412-D286-4A90-A5C9-27D22D2A882A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DA92412-D286-4A90-A5C9-27D22D2A882A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C278C8E2-A36B-405A-9F95-93324B30F832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C278C8E2-A36B-405A-9F95-93324B30F832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C278C8E2-A36B-405A-9F95-93324B30F832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C278C8E2-A36B-405A-9F95-93324B30F832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18DDBF75-1DBF-4A4C-B2ED-5D77ED42AAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18DDBF75-1DBF-4A4C-B2ED-5D77ED42AAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18DDBF75-1DBF-4A4C-B2ED-5D77ED42AAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18DDBF75-1DBF-4A4C-B2ED-5D77ED42AAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656E0D59-E979-48AA-913F-66F8D1F73388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656E0D59-E979-48AA-913F-66F8D1F73388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656E0D59-E979-48AA-913F-66F8D1F73388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656E0D59-E979-48AA-913F-66F8D1F73388}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

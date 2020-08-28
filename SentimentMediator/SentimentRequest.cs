@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using SentimentMediator.ViewModels;
+using SentimentViewModels.SentimentMediator;
 
 namespace SentimentMediator
 {

@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SentimentInfrastructure\SentimentInfrastructure.csproj" />
     <ProjectReference Include="..\SentimentMediator\SentimentMediator.csproj" />
+    <ProjectReference Include="..\SentimentServices\SentimentServices.csproj" />
   </ItemGroup>
 
   <ItemGroup>

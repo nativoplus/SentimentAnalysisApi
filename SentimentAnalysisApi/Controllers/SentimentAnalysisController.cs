@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SentimentMediator;
+using System;
 using System.Threading.Tasks;
 
 namespace SentimentAnalysisApi.Controllers
@@ -18,12 +19,10 @@ namespace SentimentAnalysisApi.Controllers
 
         // GET api/sentimentanalysis?message=this+is+awesome
         [HttpGet]
-        public async Task<IActionResult> Get(string message = "This is terrible - it sucks! I never want to see this again!")
+        public async Task<IActionResult> Get(string message)
         {
             if (string.IsNullOrEmpty(message))
-            {
-                return NotFound();
-            }
+                throw new Exception("Bad Request");
 
             return Ok(await _mediator.Send(new SentimentRequest { Message = message }));
         }
@@ -31,10 +30,8 @@ namespace SentimentAnalysisApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] SentimentRequest request)
         {
-            if (request == null)
-            {
-                return NotFound();
-            }
+            if (request == null || string.IsNullOrEmpty(request?.Message))
+                throw new Exception("Bad Request");
 
             return Ok(await _mediator.Send(request));
         }
